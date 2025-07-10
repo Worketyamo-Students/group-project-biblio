@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 const schema = Joi.object({
-  name: Joi.string().alphanum().min(5).max(20).required(),
+  name: Joi.string().alphanum().min(5).max(20),
   email: Joi.string().email().required(),
   password: Joi.string()
     .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))

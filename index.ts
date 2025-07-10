@@ -4,12 +4,14 @@ import chalk from "chalk";
 import morgan from "morgan";
 import bodyParser from "body-parser";
 import userRoutes from "./routes/Users.routes";
+import cookieParser from "cookie-parser";
 configDotenv();
 const app = express();
 const port = process.env.PORT;
 app.use(morgan("dev"));
 app.use(bodyParser.json());
-app.use("users", userRoutes);
+app.use(cookieParser());
+app.use("/users", userRoutes);
 app.listen(port, (err) => {
   if (err) throw err;
   console.log(chalk.bgBlue(`http://localhost:${port}`));
