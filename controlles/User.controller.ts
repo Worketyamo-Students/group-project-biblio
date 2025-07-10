@@ -6,6 +6,7 @@ import bcrypt from "bcrypt";
 import prisma from "../utils/prisma";
 import { Request } from "../utils/types";
 import { acessToken, refreshToken } from "../utils/token";
+
 const UserController = {
   userSignUp: async (req: Request, res: Response) => {
     try {
