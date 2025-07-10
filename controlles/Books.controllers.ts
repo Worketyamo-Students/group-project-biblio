@@ -13,24 +13,17 @@ const BookController = {
             if (!title || !author || !description || !year || !isbn) {
                 res.status(400).json({ msg: "all fields are required" });
             }
-            const { error } = schema.validate({ title, author, description, year, isbn });
-            if (error) {
-                res.status(401).json({ msg: error.message });
-            } else {
-                const book = await prisma.books.create({
-                    data: {
-                        title,
-                        author,
-                        description,
-                        year,
-                        isbn,
-                    },
-                });
-                res.status(201).json({
-                    msg: "book created",
-                    data: book,
-                });
-            }
+          
+            const book = await prisma.books.create({
+                data: {
+                    title,
+                    author,
+                    description,
+                    year,
+                    isbn,
+                },
+            });
+            res.status(201).json({ msg: "book created", data: book });
         } catch (error) {
             res.status(500).json({ msg: "server error try latter" });
         }
@@ -70,7 +63,9 @@ const BookController = {
                 where: {
                     id,
                 },
-                data: req.body,
+                data: {
+                    ...req.body
+                },
             });
             if (!profile) res.status(400).json({ msg: "user does not existe" });
             res.status(200).json({ msg: "book upated", data: profile });
