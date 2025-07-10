@@ -1,9 +1,14 @@
 import { Router } from "express";
-import BookController from "../controlles/Book.controller";
+import BookController from "../controlles/Books.controllers";
 import validationMiddleware from "../middleware/validate";
 
 const bookRoutes = Router();
 
+bookRoutes.post(
+    "/create",
+    validationMiddleware.userValidation,
+    BookController.bookCreate
+);
 bookRoutes.get("/", 
     validationMiddleware.userValidation, 
     BookController.bookList
