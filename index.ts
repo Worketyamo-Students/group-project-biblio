@@ -6,7 +6,8 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
 import userRoutes from "./routes/Users.routes";
-import bookRoutes from "./routes/Books.routes"; // ✅ nouveau import
+import bookRoutes from "./routes/Books.routes"; 
+import loanRoutes from "./routes/Loan.routes";
 
 configDotenv();
 
@@ -18,7 +19,8 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use("/users", userRoutes);
-app.use("/books", bookRoutes); // ✅ correct routeur
+app.use("/books", bookRoutes); 
+app.use("/loan", loanRoutes);
 
 app.listen(port, (err) => {
   if (err) throw err;
