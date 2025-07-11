@@ -4,28 +4,30 @@ import BookController from "../controlles/Books.controllers";
 
 const bookRoutes = Router();
 
-bookRoutes.post("/create",
-    // validationMiddleware.userValidation,
-    BookController.bookCreate
-);
-bookRoutes.get("/", 
-    // validationMiddleware.userValidation, 
-    BookController.bookList
+bookRoutes.post(
+  "/create",
+  // validationMiddleware.userValidation,
+  BookController.bookCreate
 );
 bookRoutes.get(
-    "/profile/:BookId",
-    // validationMiddleware.userValidation,
-    BookController.bookProfile
+  "/",
+  // validationMiddleware.userValidation,
+  BookController.bookList
+);
+bookRoutes.get(
+  "/:BookId",
+  // validationMiddleware.userValidation,
+  BookController.bookProfile
 );
 bookRoutes.put(
-    "/update/:BookId",
-    // validationMiddleware.userValidation,
-    BookController.bookUpdate
+  "/update/:BookId",
+  // validationMiddleware.userValidation,
+  BookController.bookUpdate
 );
 bookRoutes.delete(
-    "/delete/:BookId",
-    // validationMiddleware.userValidation,
-    BookController.bookDelete
+  "/delete/:BookId",
+  // validationMiddleware.userValidation,
+  BookController.bookDelete
 );
 
 export default bookRoutes;

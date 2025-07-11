@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 
 import userRoutes from "./routes/Users.routes";
 import bookRoutes from "./routes/Books.routes"; // ✅ nouveau import
+import loanRouter from "./routes/Loan.routes";
 
 configDotenv();
 
@@ -19,6 +20,7 @@ app.use(cookieParser());
 
 app.use("/users", userRoutes);
 app.use("/books", bookRoutes); // ✅ correct routeur
+app.use("/loans", loanRouter);
 
 app.listen(port, (err) => {
   if (err) throw err;
