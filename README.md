@@ -13,10 +13,12 @@ Une API RESTful pour la gestion d’une bibliothèque (utilisateurs et livres).
 ## 📘 Endpoints Livres
 
 ### 🔍 1. Liste des livres disponibles
+
 - **Méthode :** `GET`
 - **URL :** `/books`
 - **Description :** Retourne tous les livres disponibles.
 - **Réponse :**
+
 ```json
 {
   "msg": "Books list",
@@ -25,9 +27,11 @@ Une API RESTful pour la gestion d’une bibliothèque (utilisateurs et livres).
 ```
 
 ### ➕ 2. Ajouter un nouveau livre
+
 - **Méthode :** `POST`
 - **URL :** `/books/create`
 - **Données requises :**
+
 ```json
 {
   "title": "Le Long chemin",
@@ -37,7 +41,9 @@ Une API RESTful pour la gestion d’une bibliothèque (utilisateurs et livres).
   "isbn": "rut4r2"
 }
 ```
+
 - **Réponse :**
+
 ```json
 {
   "msg": "book created",
@@ -46,10 +52,12 @@ Une API RESTful pour la gestion d’une bibliothèque (utilisateurs et livres).
 ```
 
 ### 📖 3. Détails d’un livre
+
 - **Méthode :** `GET`
-- **URL :** `/books/profile/:BookId`
+- **URL :** `/books/:BookId`
 - **Exemple :** `/books/profile/68702d5efef8cdff2509ea1b`
 - **Réponse :**
+
 ```json
 {
   "msg": "books profile",
@@ -58,10 +66,12 @@ Une API RESTful pour la gestion d’une bibliothèque (utilisateurs et livres).
 ```
 
 ### ✏️ 4. Modifier un livre
+
 - **Méthode :** `PUT`
 - **URL :** `/books/update/:BookId`
 - **Exemple :** `/books/update/68702d5efef8cdff2509ea1b`
 - **Données requises :**
+
 ```json
 {
   "title": "La Grande Voie",
@@ -71,7 +81,9 @@ Une API RESTful pour la gestion d’une bibliothèque (utilisateurs et livres).
   "isbn": "sz7ut4r2"
 }
 ```
+
 - **Réponse :**
+
 ```json
 {
   "msg": "book upated",
@@ -80,10 +92,12 @@ Une API RESTful pour la gestion d’une bibliothèque (utilisateurs et livres).
 ```
 
 ### ❌ 5. Supprimer un livre
+
 - **Méthode :** `DELETE`
 - **URL :** `/books/delete/:BookId`
 - **Exemple :** `/books/delete/68702d5efef8cdff2509ea1b`
 - **Réponse :**
+
 ```json
 {
   "msg": "book deleted"
@@ -95,6 +109,7 @@ Une API RESTful pour la gestion d’une bibliothèque (utilisateurs et livres).
 > Certaines routes (comme la création, mise à jour ou suppression de livre) nécessitent une authentification par token JWT.
 
 **Header requis :**
+
 ```
 Authorization: Bearer <votre_token>
 ```
