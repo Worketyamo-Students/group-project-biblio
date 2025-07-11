@@ -22,6 +22,7 @@ model User {
   notification Notification[]
 }
 
+
 model Books {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
   title       String  @unique
@@ -29,6 +30,7 @@ model Books {
   description String
   year        String
   isbn        String
+  status     Status   @default( available)
   Loan        Loan?   @relation(fields: [loanId], references: [id])
   loanId      String? @db.ObjectId
 }
@@ -49,4 +51,9 @@ model Notification {
   loanId  String? @db.ObjectId
   User    User    @relation(fields: [userId], references: [id])
   Loan    Loan?   @relation(fields: [loanId], references: [id])
+}
+
+enum  Status{
+  rented
+  available
 }
