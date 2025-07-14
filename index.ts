@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.use("/users", userRoutes);
 app.use("/books", bookRoutes); 
-app.use("/loan", loanRoutes);
+app.use("/loans", loanRoutes);
 
 app.listen(port, (err) => {
   if (err) throw err;

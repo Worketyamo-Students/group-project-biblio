@@ -49,7 +49,7 @@ const LoanController = {
                     userId,
                     back,
                     book: {
-                        connect: booksIds.map((id: string) => ({ id })),                    }
+                        connect: booksIds.map((id: string) => ({ id })), }
                 },
                 include: { book: true, User: true }
             });
@@ -181,7 +181,7 @@ const LoanController = {
                     id: LoanId,
                 },
             });
-            
+
             if (!profile) res.status(400).json({ msg: "Emprunt non trouvé" });
             res.status(200).json({ msg: "Emprunt supprimé" });
         } catch (error) {

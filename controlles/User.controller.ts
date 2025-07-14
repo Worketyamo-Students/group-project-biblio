@@ -1,5 +1,4 @@
 import { Response } from "express";
-
 import { User } from "../generated/prisma";
 import schema from "../utils/validator";
 import bcrypt from "bcrypt";
