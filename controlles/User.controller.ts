@@ -7,6 +7,7 @@ import { Request } from "../utils/types";
 import { acessToken, refreshToken } from "../utils/token";
 
 const UserController = {
+
   userSignUp: async (req: Request, res: Response) => {
     try {
       const { name, email, password }: User = req.body;
@@ -42,6 +43,7 @@ const UserController = {
       res.status(500).json({ msg: "server error try latter" });
     }
   },
+
   userLogin: async (req: Request, res: Response) => {
     try {
       const { email, password }: User = req.body;
@@ -77,6 +79,7 @@ const UserController = {
       res.status(500).json({ msg: "server error try latter" });
     }
   },
+
   userProfile: async (req: Request, res: Response) => {
     try {
       const id = req.user_id;
@@ -92,6 +95,7 @@ const UserController = {
       res.status(500).json({ msg: "server error try latter" });
     }
   },
+
   userUpdate: async (req: Request, res: Response) => {
     const id = req.user_id;
     const { name, email, password }: User = req.body;
@@ -112,6 +116,7 @@ const UserController = {
       res.status(500).json({ msg: "server error try latter" });
     }
   },
+  
   userDelete: async (req: Request, res: Response) => {
     try {
       const id = req.user_id;
@@ -127,7 +132,8 @@ const UserController = {
       res.status(500).json({ msg: "server error try latter" });
     }
   },
-  userLogout: async () => {},
+  
+  userLogout: async () => { },
 };
 
 export default UserController;

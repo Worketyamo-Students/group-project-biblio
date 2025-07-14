@@ -268,8 +268,9 @@ DELETE /loans/delete/:LoanId
 
 ## ✍️ Auteur
 
-**Nehemie Sighe Nde**
-Développeur Full Stack 💻
+**Nehemie Sighe**
+**Emmanuel Setane**
+Développeurs Full Stack 💻
 Cameroon 🇨🇲
 
 ---
